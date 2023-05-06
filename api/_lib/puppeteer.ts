@@ -14,7 +14,7 @@ async function getPage() {
     return _page;
 }
 
-async function getScreenshot(url, width, height) {
+export async function getScreenshot(url, width, height) {
     const page = await getPage();
     await page.goto(url);
     await page.setViewport({ width: Number(width) || 1280, height: Number(height) || 720, deviceScaleFactor: 2 });
@@ -22,13 +22,10 @@ async function getScreenshot(url, width, height) {
     return file;
 }
 
-async function getContent(url) {
+export async function getContent(url) {
     const page = await getPage();
     await page.goto(url);
     await page.setViewport({ width: 1280, height: 720, deviceScaleFactor: 2 });
     const content = await page.content();
     return content;
 }
-
-module.exports = { getScreenshot };
-module.exports = { getContent };
