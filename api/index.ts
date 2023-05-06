@@ -1,4 +1,4 @@
-const { getScreenshot, getContent } = require("./_lib/puppeteer");
+from { getScreenshot, getContent } import "./_lib/puppeteer";
 
 module.exports = async function (req, res) {
   if (!req.query.url) return res.status(400).send("No url query specified.");
