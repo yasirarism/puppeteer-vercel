@@ -1,4 +1,5 @@
-import { getScreenshot, getContent } from "./_lib/puppeteer";
+const { getScreenshot, getContent } = require("./_lib/puppeteer");
+const app = require("express")();
 
 app.get("/webss", async (req, res) => {
   if (!req.query.url) return res.status(400).send("No url query specified.");
@@ -28,7 +29,6 @@ app.get("/pahe", async (req, res) => {
   }
 }
 
-module.exports = app;
 function checkUrl(string, hostname) {
   var url = "";
   try {
@@ -38,3 +38,5 @@ function checkUrl(string, hostname) {
   }
   return true;
 }
+
+module.exports = app;
