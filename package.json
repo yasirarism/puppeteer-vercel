@@ -1,6 +1,10 @@
 {
   "name": "screenshot",
   "version": "1.0.0",
+  "main": "api/index.ts",
+  "scripts": {
+    "start": "node index.ts"
+  },
   "description": "Serverless API to take screenshots of websites with Puppeteer.",
   "dependencies": {
     "chrome-aws-lambda": "7.0.0",
